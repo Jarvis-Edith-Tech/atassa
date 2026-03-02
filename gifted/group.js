@@ -1500,11 +1500,10 @@ gmd(
     description: "Send text or quoted media to group status. Superuser only.",
   },
   async (from, Gifted, conText) => {
-    const { reply, react, isSuperUser, isGroup, q, quoted, quotedMsg, mek } = conText;
+    const { reply, react, isSuperUser, isGroup, q, quoted, quotedMsg, mek, formatAudio, formatVideo } = conText;
     const { downloadMediaMessage } = require("gifted-baileys");
     const fs = require("fs");
     const path = require("path");
-    const { formatAudio, formatVideo } = require("./path/to/your/format/functions");
 
     if (!isGroup) return reply("❌ Group only command!");
     if (!isSuperUser) return reply("❌ Owner Only Command!");
